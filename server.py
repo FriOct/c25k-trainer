@@ -8,7 +8,9 @@ Run: conda run -n c2k python server.py
 """
 
 import os
+import base64
 import tempfile
+import atexit
 import json
 from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
@@ -17,6 +19,31 @@ from pydub import AudioSegment
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 CORS(app)
+
+# ===== YOUTUBE COOKIES =====
+# 환경변수 YOUTUBE_COOKIES_B64 에 base64 인코딩된 cookies.txt 를 넣으면
+# yt-dlp 가 자동으로 사용합니다.
+_COOKIES_FILE = None
+
+def _init_cookies():
+    global _COOKIES_FILE
+    b64 = os.environ.get("YOUTUBE_COOKIES_B64", "").strip()
+    if not b64:
+        return
+    try:
+        tmp = tempfile.NamedTemporaryFile(
+            mode="w", suffix=".txt", delete=False, prefix="yt_cookies_"
+        )
+        tmp.write(base64.b64decode(b64).decode("utf-8"))
+        tmp.flush()
+        tmp.close()
+        _COOKIES_FILE = tmp.name
+        print(f"[cookies] 쿠키 파일 로드: {_COOKIES_FILE}")
+        atexit.register(lambda: os.unlink(_COOKIES_FILE) if os.path.exists(_COOKIES_FILE) else None)
+    except Exception as e:
+        print(f"[cookies] 쿠키 로드 실패: {e}")
+
+_init_cookies()
 
 AUDIO_DIR = os.path.join(os.path.dirname(__file__), "audio")
 
@@ -150,6 +177,8 @@ def mix():
             "quiet": True,
             "no_warnings": True,
         }
+        if _COOKIES_FILE:
+            ydl_opts["cookiefile"] = _COOKIES_FILE
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(yt_url, download=True)
