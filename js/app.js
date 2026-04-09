@@ -358,7 +358,8 @@ function renderIdle() {
 }
 
 // ===== DOWNLOAD =====
-const SERVER_URL = "http://localhost:5000";
+// 로컬: localhost:5000 / 배포: Render URL (window.C25K_API_URL 으로 오버라이드 가능)
+const SERVER_URL = window.C25K_API_URL || "http://localhost:5000";
 
 const DOWNLOAD_BTN_HTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M5 21h14"/></svg> 노래+가이드 다운로드`;
 
