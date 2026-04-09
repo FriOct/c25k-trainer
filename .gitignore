@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+*.egg-info/
+
+# Conda
+conda-env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / download cache
+*.tmp
+tmp/
+temp/
+
+# IDE
+.vscode/
+.idea/
+
+# Claude / skills
+skills-lock.json
+.claude/
+.agents/
