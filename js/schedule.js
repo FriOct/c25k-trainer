@@ -12,33 +12,38 @@ function W(type, mins, cue) { return { type, duration: mins * 60, cue }; }
 function S(type, secs, cue) { return { type, duration: secs, cue }; }
 
 // ================================================================
-// C25K TREADMILL  (warmup + intervals + cooldown)
+// C25K TREADMILL  (warmup + intervals, 쿨다운 없음)
+// Source: c25k.com/c25k_treadmill
 // ================================================================
 function ct_w1()  {
   const iv = [W("warmup",5,"warmup")];
   for(let i=0;i<8;i++){iv.push(S("run",60,"run"));iv.push(S("walk",90,"walk"));}
-  iv.push(W("cooldown",5,"cooldown")); return iv;
+  return iv;
 }
 function ct_w2()  {
   const iv = [W("warmup",5,"warmup")];
   for(let i=0;i<6;i++){iv.push(S("run",90,"run"));iv.push(W("walk",2,"walk"));}
-  iv.push(W("cooldown",5,"cooldown")); return iv;
+  return iv;
 }
 function ct_w3()  {
   const iv = [W("warmup",5,"warmup")];
   for(let i=0;i<2;i++){iv.push(S("run",90,"run"));iv.push(S("walk",90,"walk"));iv.push(W("run",3,"run"));iv.push(W("walk",3,"walk"));}
-  iv.push(W("cooldown",5,"cooldown")); return iv;
+  return iv;
 }
-function ct_w4()  { return [W("warmup",5,"warmup"),W("run",3,"run"),S("walk",90,"walk"),W("run",5,"run"),S("walk",150,"walk"),W("run",3,"run"),S("walk",90,"walk"),W("run",5,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w5d1(){ return [W("warmup",5,"warmup"),W("run",5,"run"),W("walk",3,"walk"),W("run",5,"run"),W("walk",3,"walk"),W("run",5,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w5d2(){ return [W("warmup",5,"warmup"),W("run",8,"run"),W("walk",5,"walk"),W("run",8,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w5d3(){ return [W("warmup",5,"warmup"),W("run",20,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w6d1(){ return [W("warmup",5,"warmup"),W("run",5,"run"),W("walk",3,"walk"),W("run",8,"run"),W("walk",3,"walk"),W("run",5,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w6d2(){ return [W("warmup",5,"warmup"),W("run",10,"run"),W("walk",3,"walk"),W("run",10,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w6d3(){ return [W("warmup",5,"warmup"),W("run",22,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w7()  { return [W("warmup",5,"warmup"),W("run",25,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w8()  { return [W("warmup",5,"warmup"),W("run",28,"run"),W("cooldown",5,"cooldown")]; }
-function ct_w9()  { return [W("warmup",5,"warmup"),W("run",30,"run"),W("cooldown",5,"cooldown")]; }
+// Week 4: 중간 걷기 2분 (120초)
+function ct_w4()  { return [W("warmup",5,"warmup"),W("run",3,"run"),S("walk",90,"walk"),W("run",5,"run"),S("walk",120,"walk"),W("run",3,"run"),S("walk",90,"walk"),W("run",5,"run")]; }
+// Week 5 W1: 조깅 4회 + 걷기 3회
+function ct_w5d1(){ return [W("warmup",5,"warmup"),W("run",5,"run"),W("walk",3,"walk"),W("run",5,"run"),W("walk",3,"walk"),W("run",5,"run"),W("walk",3,"walk"),W("run",5,"run")]; }
+function ct_w5d2(){ return [W("warmup",5,"warmup"),W("run",8,"run"),W("walk",5,"walk"),W("run",8,"run")]; }
+function ct_w5d3(){ return [W("warmup",5,"warmup"),W("run",20,"run")]; }
+// Week 6 W1: run5+walk3+run8 (끝)
+function ct_w6d1(){ return [W("warmup",5,"warmup"),W("run",5,"run"),W("walk",3,"walk"),W("run",8,"run")]; }
+function ct_w6d2(){ return [W("warmup",5,"warmup"),W("run",10,"run"),W("walk",3,"walk"),W("run",10,"run")]; }
+// Week 6 W3: 25분
+function ct_w6d3(){ return [W("warmup",5,"warmup"),W("run",25,"run")]; }
+function ct_w7()  { return [W("warmup",5,"warmup"),W("run",25,"run")]; }
+function ct_w8()  { return [W("warmup",5,"warmup"),W("run",28,"run")]; }
+function ct_w9()  { return [W("warmup",5,"warmup"),W("run",30,"run")]; }
 
 // ================================================================
 // C25K PLAN  (c25k.com/c25k_plan — NO cooldown)
