@@ -115,10 +115,14 @@ select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   border-radius: 99px;
   white-space: nowrap;
 }
-.chip.run     { background: #15803d33; color: var(--run); border: 1px solid #15803d66; }
-.chip.walk    { background: #1d4ed833; color: var(--walk); border: 1px solid #1d4ed866; }
-.chip.warmup  { background: #92400e33; color: var(--warmup); border: 1px solid #92400e66; }
-.chip.cooldown{ background: #5b21b633; color: var(--cooldown); border: 1px solid #5b21b666; }
+.chip.run      { background: #15803d33; color: var(--run);      border: 1px solid #15803d66; }
+.chip.walk     { background: #1d4ed833; color: var(--walk);     border: 1px solid #1d4ed866; }
+.chip.warmup   { background: #92400e33; color: var(--warmup);   border: 1px solid #92400e66; }
+.chip.cooldown { background: #5b21b633; color: var(--cooldown); border: 1px solid #5b21b666; }
+.chip.easy     { background: #16653033; color: #4ade80;         border: 1px solid #16653066; }
+.chip.tempo    { background: #c2410c33; color: #fb923c;         border: 1px solid #c2410c66; }
+.chip.speed    { background: #9f123933; color: #f472b6;         border: 1px solid #9f123966; }
+.chip.race     { background: #a1620033; color: #fbbf24;         border: 1px solid #a1620066; }
 
 /* ===== YOUTUBE INPUT ===== */
 .yt-input-row {
@@ -187,11 +191,15 @@ select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   padding: 24px 16px;
   transition: background 0.4s, border-color 0.4s;
 }
-.status-card.run     { background: #15803d1a; border-color: #15803d66; }
-.status-card.walk    { background: #1d4ed81a; border-color: #1d4ed866; }
-.status-card.warmup  { background: #92400e1a; border-color: #92400e66; }
-.status-card.cooldown{ background: #5b21b61a; border-color: #5b21b666; }
-.status-card.idle    { background: var(--surface); border-color: var(--border); }
+.status-card.run      { background: #15803d1a; border-color: #15803d66; }
+.status-card.walk     { background: #1d4ed81a; border-color: #1d4ed866; }
+.status-card.warmup   { background: #92400e1a; border-color: #92400e66; }
+.status-card.cooldown { background: #5b21b61a; border-color: #5b21b666; }
+.status-card.easy     { background: #16653020; border-color: #16653066; }
+.status-card.tempo    { background: #c2410c1a; border-color: #c2410c66; }
+.status-card.speed    { background: #9f12391a; border-color: #9f123966; }
+.status-card.race     { background: #a162001a; border-color: #a1620066; }
+.status-card.idle     { background: var(--surface); border-color: var(--border); }
 
 .status-icon { font-size: 2.5rem; margin-bottom: 4px; }
 .status-label {
@@ -201,11 +209,15 @@ select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   line-height: 1;
   transition: color 0.4s;
 }
-.status-label.run     { color: var(--run); }
-.status-label.walk    { color: var(--walk); }
-.status-label.warmup  { color: var(--warmup); }
-.status-label.cooldown{ color: var(--cooldown); }
-.status-label.idle    { color: var(--text-dim); }
+.status-label.run      { color: var(--run); }
+.status-label.walk     { color: var(--walk); }
+.status-label.warmup   { color: var(--warmup); }
+.status-label.cooldown { color: var(--cooldown); }
+.status-label.easy     { color: #4ade80; }
+.status-label.tempo    { color: #fb923c; }
+.status-label.speed    { color: #f472b6; }
+.status-label.race     { color: #fbbf24; }
+.status-label.idle     { color: var(--text-dim); }
 
 .timer-display {
   font-size: 3.8rem;
@@ -228,10 +240,14 @@ select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   border-radius: 3px;
   transition: width 0.5s linear, background 0.4s;
 }
-.run  .interval-progress-bar { background: var(--run); }
-.walk .interval-progress-bar { background: var(--walk); }
-.warmup .interval-progress-bar { background: var(--warmup); }
+.run      .interval-progress-bar { background: var(--run); }
+.walk     .interval-progress-bar { background: var(--walk); }
+.warmup   .interval-progress-bar { background: var(--warmup); }
 .cooldown .interval-progress-bar { background: var(--cooldown); }
+.easy     .interval-progress-bar { background: #4ade80; }
+.tempo    .interval-progress-bar { background: #fb923c; }
+.speed    .interval-progress-bar { background: #f472b6; }
+.race     .interval-progress-bar { background: #fbbf24; }
 
 .next-label {
   font-size: 0.8rem;
@@ -285,6 +301,10 @@ select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tl-seg.walk     { background: var(--walk); }
 .tl-seg.warmup   { background: var(--warmup); }
 .tl-seg.cooldown { background: var(--cooldown); }
+.tl-seg.easy     { background: #4ade80; }
+.tl-seg.tempo    { background: #fb923c; }
+.tl-seg.speed    { background: #f472b6; }
+.tl-seg.race     { background: #fbbf24; }
 .tl-seg.done     { opacity: 0.3; }
 .tl-seg.active   { opacity: 1; box-shadow: 0 0 4px currentColor; }
 .tl-seg.upcoming { opacity: 0.5; }

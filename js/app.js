@@ -104,10 +104,14 @@ const toast         = document.getElementById("toast");
 
 // ===== TYPE META =====
 const TYPE_META = {
-  warmup:   { icon: "🚶", label: "워밍업",    cls: "warmup"   },
-  run:      { icon: "🏃", label: "달리기",    cls: "run"      },
-  walk:     { icon: "🚶", label: "걷기",      cls: "walk"     },
-  cooldown: { icon: "🧊", label: "쿨다운",    cls: "cooldown" },
+  warmup:   { icon: "🚶", label: "워밍업",      cls: "warmup"   },
+  run:      { icon: "🏃", label: "달리기",      cls: "run"      },
+  walk:     { icon: "🚶", label: "걷기",        cls: "walk"     },
+  cooldown: { icon: "🧊", label: "쿨다운",      cls: "cooldown" },
+  easy:     { icon: "🏃", label: "쉬운 달리기", cls: "easy"     },
+  tempo:    { icon: "🔥", label: "템포런",      cls: "tempo"    },
+  speed:    { icon: "⚡", label: "인터벌",      cls: "speed"    },
+  race:     { icon: "🏁", label: "레이스",      cls: "race"     },
 };
 
 // ===== INIT =====
