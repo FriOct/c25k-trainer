@@ -2,7 +2,7 @@
 
 > **Couch to 5K** 러닝 프로그램을 유튜브 음악과 함께 — 음성 가이드로 트레드밀에서 스마트하게 운동하세요.
 
-[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?logo=github)](https://your-username.github.io/c25k-trainer)
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?logo=github)](https://frioct.github.io/c25k-trainer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
