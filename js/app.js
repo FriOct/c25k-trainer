@@ -268,7 +268,7 @@ function createPlayer(vid) {
 }
 
 function extractVideoId(url) {
-  const m = url.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+  const m = url.match(/(?:v=|youtu\.be\/|embed\/|live\/)([A-Za-z0-9_-]{11})/);
   return m ? m[1] : null;
 }
 
